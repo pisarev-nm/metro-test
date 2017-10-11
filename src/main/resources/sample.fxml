@@ -1,16 +1,18 @@
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.layout.GridPane?>
-
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.TextField?>
 <AnchorPane fx:controller="sample.Controller"
-            xmlns:fx="http://javafx.com/fxml"  style="-fx-background-color: #000000">
+            xmlns:fx="http://javafx.com/fxml" style="-fx-background-color: #000000">
 
-    <Circle fx:id="mainCircle" centerX="800" centerY="450" radius="350" fill="black" stroke="ghostwhite" strokeWidth="1" onMouseClicked="#catchRed">
+    <Circle fx:id="mainCircle" centerX="800" centerY="450" radius="350" fill="black" stroke="black" onMouseClicked="#catchRedMouse" onKeyPressed="#catchKey" >
     </Circle>
     <Button fx:id="startButton" text="Начать тестирование" style="-fx-background-color: black; -fx-font-size: 20" textFill="ghostwhite" translateX="30" translateY="30" prefWidth="240" prefHeight="30" onMouseClicked="#startTest"/>
-    <Circle fx:id="moveCircle" radius="30" fill="green" visible="false"></Circle>
-    <Label fx:id="resultLabel" style="-fx-background-color: black; -fx-font-size: 20" textFill="ghostwhite" prefWidth="240" prefHeight="30" visible="false" translateX="300" translateY="300"></Label>
+    <Circle fx:id="moveCircle" radius="30" fill="green" visible="false"/>
+    <Label fx:id="resultLabel" style="-fx-background-color: black; -fx-font-size: 20" textFill="ghostwhite" prefWidth="240" prefHeight="30" visible="false" />
+    <Label fx:id="timerLabel" style="-fx-background-color: black; -fx-font-size: 20" textFill="ghostwhite" prefWidth="240" prefHeight="30" visible="false" />
+    <TextField fx:id="tfTestLong" text="3600" promptText="Длительность, сек." translateY="90" translateX="30" prefWidth="240"/>
+    <TextField fx:id="tfRedQuantity" text="0.00333" promptText="Вероятность красного сигнала" translateY="130" translateX="30" prefWidth="240"/>
+    <TextField fx:id="tfTestReact" text="990" promptText="Требуемая реакция (1-999), мс." translateY="170" translateX="30" prefWidth="240"/>
 </AnchorPane>
